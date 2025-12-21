@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RoadmapViewer from '../components/RoadmapViewer.jsx';
+---
+
+<Layout>
+  <div class="bg-slate-50 border-b border-slate-200 dark:bg-[#161616] dark:border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white sm:text-5xl">
+        深度学习 <span class="text-orange-600">学习路线</span>
+      </h1>
+      <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        按照我们精心设计的步骤，从零开始掌握人工智能。点击下方的节点查看详细教程和资源。
+      </p>
+    </div>
+  </div>
+
+  <div class="bg-white dark:bg-[#0f0f0f] min-h-screen">
+    <div class="mx-auto max-w-5xl px-4">
+      <RoadmapViewer client:load />
+    </div>
+  </div>
+</Layout>

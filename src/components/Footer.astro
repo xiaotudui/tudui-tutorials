@@ -1,61 +1,33 @@
 ---
-// src/components/Footer.astro
-const currentYear = new Date().getFullYear();
+const year = new Date().getFullYear();
 ---
 
-<footer class="bg-[#0f0f0f] border-t border-white/10 text-gray-400">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="space-y-8 xl:col-span-1">
-        <a href="/" class="text-xl font-bold text-white">
-          <span class="text-purple-500">Tudui</span>Roadmap
-        </a>
-        <p class="text-sm leading-6">
-          Community created roadmaps, articles, resources and journeys to help you choose your path and grow in your career.
-        </p>
-        <div class="flex space-x-6">
-           <a href="#" class="text-gray-400 hover:text-white">
-             <span class="sr-only">GitHub</span>
-             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-             </svg>
-           </a>
-        </div>
-      </div>
-
-      <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold leading-6 text-white">Resources</h3>
-            <ul role="list" class="mt-6 space-y-4">
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">Roadmaps</a></li>
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">Best Practices</a></li>
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">Guides</a></li>
-            </ul>
-          </div>
-          <div class="mt-10 md:mt-0">
-            <h3 class="text-sm font-semibold leading-6 text-white">Community</h3>
-            <ul role="list" class="mt-6 space-y-4">
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">About</a></li>
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">YouTube</a></li>
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">Discord</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold leading-6 text-white">Legal</h3>
-            <ul role="list" class="mt-6 space-y-4">
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">Privacy</a></li>
-              <li><a href="#" class="text-sm leading-6 hover:text-purple-400">Terms</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<footer class="bg-white border-t border-slate-200 dark:bg-[#0f0f0f] dark:border-white/10">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
     
-    <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-      <p class="text-xs leading-5 text-gray-500">&copy; {currentYear} Tudui Tutorials. All rights reserved.</p>
+    <div class="text-center md:text-left">
+      <a href="/" class="text-lg font-bold text-slate-900 dark:text-white">
+        <span class="text-orange-500">Tudui</span>Tutorials
+      </a>
+      <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+        &copy; {year} 小土堆. All rights reserved. 
+      </p>
+    </div>
+
+    <div class="flex gap-6 text-sm text-slate-600 dark:text-slate-400">
+      <a href="#" class="hover:text-orange-500 transition-colors">关于我们</a>
+      <a href="#" class="hover:text-orange-500 transition-colors">隐私政策</a>
+      <a href="#" class="hover:text-orange-500 transition-colors">联系合作</a>
+    </div>
+
+    <div class="flex gap-4">
+      <a href="https://github.com" target="_blank" aria-label="Github" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+      </a>
+      <a href="#" class="text-slate-400 hover:text-[#fb7299] transition-colors">
+        <span class="sr-only">Bilibili</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.848 0 17.337V7.337c.036-1.51.556-2.769 1.56-3.773S3.822 2.04 5.333 2.004h.854l-2.952-3.21c-.74-.805.127-1.666.953-.948l4.136 3.612h7.352l4.136-3.612c.826-.718 1.693.143.953.948l-2.952 3.21zm-7.98 9.535c1.786 0 3.235-1.334 3.235-2.98 0-1.647-1.449-2.98-3.235-2.98s-3.235 1.333-3.235 2.98c0 1.646 1.449 2.98 3.235 2.98z"/></svg>
+      </a>
     </div>
   </div>
 </footer>

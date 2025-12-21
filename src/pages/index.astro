@@ -1,11 +1,92 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <section class="relative pt-20 pb-32 overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-100/40 via-white to-white dark:from-orange-900/20 dark:via-[#0f0f0f] dark:to-[#0f0f0f]"></div>
+    
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-sm font-medium text-orange-800 mb-8 dark:border-orange-900/50 dark:bg-orange-900/30 dark:text-orange-300">
+        🚀 深度学习入门首选
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+        让 AI 学习变得 <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">简单有趣</span>
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        汇聚优质的路线图、实用的工具箱以及前沿的实战项目。无论你是初学者还是开发者，土堆教程都是你成长的最佳伙伴。
+      </p>
+      
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a href="#tutorials" class="rounded-xl bg-orange-600 px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-all">
+          开始学习
+        </a>
+        <a href="https://space.bilibili.com/your-bilibili-id" target="_blank" class="text-sm font-semibold leading-6 text-slate-900 dark:text-white flex items-center gap-1 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+          观看视频 <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-slate-50/50 dark:bg-[#161616]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div id="tutorials" class="group relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 hover:ring-orange-500/50 hover:shadow-lg transition-all dark:bg-[#1a1a1a] dark:ring-white/10 dark:hover:ring-orange-500/50">
+          <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">土堆教程</h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-6">
+            清晰的学习路线图 (Roadmap)，配合保姆级的文字与视频教程，带kB从零入门到精通。
+          </p>
+          <ul class="space-y-2 mb-8 text-sm text-slate-500 dark:text-slate-500">
+            <li class="flex items-center">✓ PyTorch 深度学习入门</li>
+            <li class="flex items-center">✓ 计算机视觉基础</li>
+            <li class="flex items-center">✓ 目标检测实战</li>
+          </ul>
+          <a href="#" class="inline-flex items-center text-orange-600 font-medium hover:underline dark:text-orange-400">
+            查看教程 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+        </div>
+
+        <div id="tools" class="group relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 hover:ring-blue-500/50 hover:shadow-lg transition-all dark:bg-[#1a1a1a] dark:ring-white/10 dark:hover:ring-blue-500/50">
+          <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" /></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">土堆工具箱</h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-6">
+            工欲善其事，必先利其器。这里提供数据集查看器、标注转换工具等，提升你的开发效率。
+          </p>
+          <ul class="space-y-2 mb-8 text-sm text-slate-500 dark:text-slate-500">
+            <li class="flex items-center">✓ VOC Dataset Viewer</li>
+            <li class="flex items-center">✓ YOLO 格式转换助手</li>
+            <li class="flex items-center">✓ 训练日志可视化</li>
+          </ul>
+          <a href="https://www.xiaotudui.com/tuduilab/voc-dataset-viewer" target="_blank" class="inline-flex items-center text-blue-600 font-medium hover:underline dark:text-blue-400">
+            使用工具 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+        </div>
+
+        <div id="labs" class="group relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 hover:ring-purple-500/50 hover:shadow-lg transition-all dark:bg-[#1a1a1a] dark:ring-white/10 dark:hover:ring-purple-500/50">
+          <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.514A2.25 2.25 0 006.609 18.375h10.783a2.25 2.25 0 001.609-3.861L14.909 10.41a2.25 2.25 0 01-.659-1.591V3.104m-9.75 0h9.75M7.5 7.5h9m-9 3.75h9" /></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">土堆实验室</h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-6">
+            不仅是看，更要动手做。精选开源项目实战案例，提供源码和详细复现文档，快速积累经验。
+          </p>
+          <ul class="space-y-2 mb-8 text-sm text-slate-500 dark:text-slate-500">
+            <li class="flex items-center">✓ 垃圾分类检测系统</li>
+            <li class="flex items-center">✓ 姿态估计实战</li>
+            <li class="flex items-center">✓ GAN 图像生成</li>
+          </ul>
+          <a href="#" class="inline-flex items-center text-purple-600 font-medium hover:underline dark:text-purple-400">
+            进入实验室 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -1,112 +1,84 @@
 ---
-// src/components/Navbar.astro
-const navLinks = [
-    { name: "Roadmaps", href: "#" },
-    { name: "Best Practices", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "Videos", href: "#" },
+// 定义导航链接
+const links = [
+  { name: '土堆教程', href: '#tutorials' }, // 实际上线后可改为 /tutorials
+  { name: '土堆工具箱', href: '#tools' },   // 实际上线后可改为 /toolbox
+  { name: '土堆实验室', href: '#labs' },    // 实际上线后可改为 /labs
 ];
 ---
 
-<header
-    class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0f0f0f] text-white"
->
-    <nav
-        class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
-    >
-        <div class="flex items-center gap-2">
-            <a href="/" class="text-xl font-bold tracking-tight">
-                <span class="text-purple-500">Tudui</span>Roadmap
-            </a>
-        </div>
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-[#0f0f0f]/80">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    
+    <a href="/" class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+      <span class="text-orange-500">Tudui</span>Tutorials
+    </a>
 
-        <div class="hidden md:flex md:items-center md:gap-8">
-            {
-                navLinks.map((link) => (
-                    <a
-                        href={link.href}
-                        class="text-sm font-medium text-gray-400 transition-colors hover:text-white"
-                    >
-                        {link.name}
-                    </a>
-                ))
-            }
-        </div>
-
-        <div class="hidden items-center gap-4 md:flex">
-            <a
-                href="#"
-                class="text-sm font-medium text-gray-400 hover:text-white"
-                >Login</a
-            >
-            <a
-                href="#"
-                class="rounded-md bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700 transition-colors"
-            >
-                Sign up
-            </a>
-        </div>
-
-        <button
-            id="mobile-menu-btn"
-            class="rounded p-2 text-gray-400 hover:bg-white/10 hover:text-white md:hidden"
-            aria-label="Open menu"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-6 w-6"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-        </button>
+    <nav class="hidden md:flex gap-8">
+      {links.map((link) => (
+        <a href={link.href} class="text-sm font-medium text-slate-600 hover:text-orange-500 dark:text-slate-300 dark:hover:text-orange-400 transition-colors">
+          {link.name}
+        </a>
+      ))}
     </nav>
 
-    <div
-        id="mobile-menu"
-        class="hidden border-t border-white/10 bg-[#0f0f0f] md:hidden"
-    >
-        <div class="space-y-1 px-4 pb-3 pt-2">
-            {
-                navLinks.map((link) => (
-                    <a
-                        href={link.href}
-                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/10 hover:text-white"
-                    >
-                        {link.name}
-                    </a>
-                ))
-            }
-            <div class="mt-4 flex flex-col gap-2 border-t border-white/10 pt-4">
-                <a
-                    href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/10 hover:text-white"
-                    >Login</a
-                >
-                <a
-                    href="#"
-                    class="block rounded-md bg-purple-600 px-3 py-2 text-center text-base font-medium text-white hover:bg-purple-700"
-                    >Sign up</a
-                >
-            </div>
-        </div>
+    <div class="flex items-center gap-4">
+      <button id="theme-toggle" class="rounded-full p-2 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/10 transition-colors" aria-label="切换主题">
+        <svg id="sun-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        <svg id="moon-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+      </button>
+
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
     </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#0f0f0f]">
+    <div class="flex flex-col p-4 space-y-4">
+      {links.map((link) => (
+        <a href={link.href} class="text-base font-medium text-slate-600 hover:text-orange-500 dark:text-slate-300 dark:hover:text-orange-400">
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
 </header>
 
 <script>
-    // 处理移动端菜单切换逻辑
-    const menuBtn = document.getElementById("mobile-menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
+  // 主题切换逻辑
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
+  const updateIcons = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      sunIcon?.classList.remove('hidden');
+      moonIcon?.classList.add('hidden');
+    } else {
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
     }
+  };
+
+  // 初始化图标
+  updateIcons();
+
+  themeToggleBtn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    updateIcons();
+  });
+
+  // 移动端菜单
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
 </script>
