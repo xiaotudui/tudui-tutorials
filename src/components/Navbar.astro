@@ -1,0 +1,112 @@
+---
+// src/components/Navbar.astro
+const navLinks = [
+    { name: "Roadmaps", href: "#" },
+    { name: "Best Practices", href: "#" },
+    { name: "Guides", href: "#" },
+    { name: "Videos", href: "#" },
+];
+---
+
+<header
+    class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0f0f0f] text-white"
+>
+    <nav
+        class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+    >
+        <div class="flex items-center gap-2">
+            <a href="/" class="text-xl font-bold tracking-tight">
+                <span class="text-purple-500">Tudui</span>Roadmap
+            </a>
+        </div>
+
+        <div class="hidden md:flex md:items-center md:gap-8">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-sm font-medium text-gray-400 transition-colors hover:text-white"
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+        </div>
+
+        <div class="hidden items-center gap-4 md:flex">
+            <a
+                href="#"
+                class="text-sm font-medium text-gray-400 hover:text-white"
+                >Login</a
+            >
+            <a
+                href="#"
+                class="rounded-md bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700 transition-colors"
+            >
+                Sign up
+            </a>
+        </div>
+
+        <button
+            id="mobile-menu-btn"
+            class="rounded p-2 text-gray-400 hover:bg-white/10 hover:text-white md:hidden"
+            aria-label="Open menu"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-[#0f0f0f] md:hidden"
+    >
+        <div class="space-y-1 px-4 pb-3 pt-2">
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/10 hover:text-white"
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+            <div class="mt-4 flex flex-col gap-2 border-t border-white/10 pt-4">
+                <a
+                    href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/10 hover:text-white"
+                    >Login</a
+                >
+                <a
+                    href="#"
+                    class="block rounded-md bg-purple-600 px-3 py-2 text-center text-base font-medium text-white hover:bg-purple-700"
+                    >Sign up</a
+                >
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // 处理移动端菜单切换逻辑
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    }
+</script>
