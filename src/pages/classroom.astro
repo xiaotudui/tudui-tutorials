@@ -1,0 +1,31 @@
+---
+//
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  { title: "垃圾分类检测系统", level: "进阶", image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=400" },
+  { title: "手势识别交互", level: "实战", image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=400" }
+];
+---
+
+<Layout>
+  <div class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <h1 class="mb-4 text-4xl font-black tracking-tight dark:text-white">实战项目库</h1>
+      <p class="mb-12 text-slate-600 dark:text-slate-400 text-lg">不仅是看，更要动手做。我们为你准备了可复现的深度学习案例。</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map(p => (
+          <div class="overflow-hidden rounded-3xl border border-slate-200 transition-all hover:shadow-xl dark:border-white/10">
+            <img src={p.image} class="h-48 w-full object-cover" />
+            <div class="p-6">
+              <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-600 dark:bg-orange-900/30">{p.level}</span>
+              <h3 class="mt-4 text-xl font-bold dark:text-white">{p.title}</h3>
+              <button class="mt-6 w-full rounded-xl bg-slate-50 py-3 text-sm font-bold text-slate-700 hover:bg-orange-500 hover:text-white transition-all dark:bg-white/5 dark:text-white">查看详情</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

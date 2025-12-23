@@ -2,32 +2,58 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-white border-t border-slate-200 dark:bg-[#0f0f0f] dark:border-white/10">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-    
-    <div class="text-center md:text-left">
-      <a href="/" class="text-lg font-bold text-slate-900 dark:text-white">
-        <span class="text-orange-500">Tudui</span>Tutorials
-      </a>
-      <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        &copy; {year} 小土堆. All rights reserved. 
+<footer class="bg-slate-50 border-t border-slate-200 dark:bg-[#030712] dark:border-white/5">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="col-span-1 md:col-span-2">
+        <a href="/" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white" style="font-family: 'JetBrains Mono', sans-serif;">
+          <span class="text-orange-500">小土堆</span> 深度学习
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+          致力于提供最直观、最易懂的深度学习教程。无论是零基础小白还是进阶开发者，都能在这里找到成长的动力。
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">资源</h4>
+        <ul class="mt-6 space-y-4 text-sm text-slate-600 dark:text-slate-400">
+          <li><a href="/tutorials" class="hover:text-orange-600 transition-colors">路线图</a></li>
+          <li><a href="/classroom" class="hover:text-orange-600 transition-colors">实战教室</a></li>
+          <li><a href="#" class="hover:text-orange-600 transition-colors">工具箱</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white">关注我们</h4>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="#" class="h-10 w-10 flex items-center justify-center rounded-xl bg-white text-slate-400 border border-slate-200 hover:text-[#fb7299] hover:border-[#fb7299]/50 hover:shadow-lg transition-all dark:bg-white/5 dark:border-white/10 dark:hover:text-[#fb7299]">
+             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.848 0 17.337V7.337c.036-1.51.556-2.769 1.56-3.773S3.822 2.04 5.333 2.004h.854l-2.952-3.21c-.74-.805.127-1.666.953-.948l4.136 3.612h7.352l4.136-3.612c.826-.718 1.693.143.953.948l-2.952 3.21zm-7.98 9.535c1.786 0 3.235-1.334 3.235-2.98 0-1.647-1.449-2.98-3.235-2.98s-3.235 1.333-3.235 2.98c0 1.646 1.449 2.98 3.235 2.98z"/></svg>
+          </a>
+          <div class="relative group cursor-help">
+            <div class="h-10 w-10 flex items-center justify-center rounded-xl bg-white text-slate-400 border border-slate-200 hover:text-[#07c160] hover:border-[#07c160]/50 hover:shadow-lg transition-all dark:bg-white/5 dark:border-white/10 dark:hover:text-[#07c160]">
+               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.35 4.34a7.1 7.1 0 0 0-3.34 1.35..."></path></svg>
+            </div>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <div class="bg-white p-2 rounded-xl shadow-2xl border border-slate-100">
+                <div class="w-32 h-32 bg-slate-100 rounded-lg flex items-center justify-center text-[10px] text-slate-400">公众号二维码</div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="h-10 w-10 flex items-center justify-center rounded-xl bg-white text-slate-400 border border-slate-200 hover:text-[#ff2442] hover:border-[#ff2442]/50 hover:shadow-lg transition-all dark:bg-white/5 dark:border-white/10">
+             <span class="text-xs font-black">RED</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-500 dark:text-slate-400">
+        &copy; {year} 小土堆. 坚持纯碎，传递知识。
       </p>
-    </div>
-
-    <div class="flex gap-6 text-sm text-slate-600 dark:text-slate-400">
-      <a href="#" class="hover:text-orange-500 transition-colors">关于我们</a>
-      <a href="#" class="hover:text-orange-500 transition-colors">隐私政策</a>
-      <a href="#" class="hover:text-orange-500 transition-colors">联系合作</a>
-    </div>
-
-    <div class="flex gap-4">
-      <a href="https://github.com" target="_blank" aria-label="Github" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-      </a>
-      <a href="#" class="text-slate-400 hover:text-[#fb7299] transition-colors">
-        <span class="sr-only">Bilibili</span>
-        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.848 0 17.337V7.337c.036-1.51.556-2.769 1.56-3.773S3.822 2.04 5.333 2.004h.854l-2.952-3.21c-.74-.805.127-1.666.953-.948l4.136 3.612h7.352l4.136-3.612c.826-.718 1.693.143.953.948l-2.952 3.21zm-7.98 9.535c1.786 0 3.235-1.334 3.235-2.98 0-1.647-1.449-2.98-3.235-2.98s-3.235 1.333-3.235 2.98c0 1.646 1.449 2.98 3.235 2.98z"/></svg>
-      </a>
+      <div class="flex gap-8 text-xs text-slate-500 dark:text-slate-400">
+        <a href="#" class="hover:text-orange-500 transition-colors">隐私声明</a>
+        <a href="#" class="hover:text-orange-500 transition-colors">合作咨询</a>
+      </div>
     </div>
   </div>
 </footer>
